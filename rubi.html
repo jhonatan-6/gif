@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<head>
+  <meta charset='UTF-8'>
+  <title>Rubi</title>
+  <style>
+        * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* body */
+    .flower-content {
+      background:linear-gradient(to top right, #000000, #35064f);
+      align-items: center;
+      display: flex;
+      height: 100vh;      
+      justify-content: center;      
+      width: 100vw;
+    }
+    
+    .flower {
+      display: grid;
+      grid-template-columns: repeat(6, 50px);
+      grid-template-rows: repeat(6, 50px);
+    }
+
+    .PetaloG {
+      animation: 1000ms showPetals linear forwards;
+      background: linear-gradient(to bottom, rgba(10, 83, 178, 0.4), rgba(7, 71, 135, 0.2));
+      opacity: 0;
+    }
+
+    .PetaloC {
+      animation: 1000ms showPetals linear forwards;
+      background-image: linear-gradient(to left, rgba(98, 217, 247, 0.8) 0%, rgba(81, 202, 254, 0.6) 100%);
+      opacity: 0;
+    }
+
+    .PetaloG1 {
+      border-radius: 100% 0;
+      box-shadow: 0 2.75em 4.5em rgba(0, 0, 0, .2);
+      grid-column: 4/-1;
+      grid-row: 1/4;      
+    }
+
+    .PetaloG2 {
+      animation-delay: 200ms;
+      box-shadow: 2.75em 0 4.5em rgba(0,0,0,.2);
+      border-radius: 0 100%;
+      grid-column: 4/-1;
+      grid-row: 4/-1;
+    }
+ 
+    .PetaloG3{
+      animation-delay: 400ms;
+      border-radius: 100% 0;
+      box-shadow: 0 -2.75em 4.5em rgba(0,0,0,.2);
+      grid-column: 1/4;
+      grid-row: 4 / -1;      
+    }
+
+    .PetaloG4 {
+      animation-delay: 600ms;
+      border-radius: 0 100%;
+      box-shadow: -2.75em 0 4.5em rgba(0,0,0,.2);
+      grid-column: 1/4;
+      grid-row: 1/4;
+    }
+
+    .PetaloC1 {
+      animation-delay: 800ms;
+      border-radius: 100% 0; 
+      grid-column: 4/6;
+      grid-row: 2/4;
+    }
+
+    .PetaloC2 {
+      animation-delay: 1000ms;
+      border-radius: 100% 0;
+      grid-column: 4/6;
+      grid-row: 3/5;
+      transform: rotate(45deg) translate(0.8rem, -0.8rem);
+    }
+
+    .PetaloC3 {
+      animation-delay: 1200ms;
+      border-radius: 0 100%;
+      grid-column: 4/6;
+      grid-row: 4/6;
+    }
+
+    .PetaloC4 {
+      animation-delay: 1400ms;
+      border-radius: 100% 0;
+      grid-column: 3/5;
+      grid-row: 3/5;
+      transform: rotate(135deg) translate(3.2rem, -3.2rem);
+    }
+
+    .PetaloC5 {
+      animation-delay: 1600ms;
+      border-radius: 100% 0;
+      grid-column: 2/4;
+      grid-row: 4/6;
+    }
+
+    .PetaloC6 {
+      animation-delay: 1800ms;
+      border-radius: 100% 0;
+      grid-column: 2/4;
+      grid-row: 3/5;
+      transform: rotate(45deg) translate(-0.6rem, 0.6rem);
+    }
+
+    .PetaloC7 {
+      animation-delay: 2000ms;
+      border-radius: 0 100%;
+      grid-column: 2/4;
+      grid-row: 2/4;
+    }
+
+    .PetaloC8 {
+      animation-delay: 2200ms;
+      border-radius: 100% 0;
+      grid-column: 3/5;
+      grid-row: 1/3;
+      transform: rotate(135deg) translate(1.7rem, -1.7rem);
+    }
+
+    .postxt{
+        position: absolute;
+        top: 70%;
+        left: 47%;
+    }
+
+    .txt{
+        color: #fff;
+        font-family: Edwardian Script ITC;
+        font-size: xxx-large;
+        margin-left: 100px;
+    }
+@keyframes showPetals {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    
+    .button a{
+        font-size: .5rem;
+    }
+}
+
+.description{
+    color: #00b3ff;
+}
+
+/* Estilo para el botón */
+.button button {
+    background-color: rgb(34, 0, 255); /* Fondo amarillo */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Ajusta el relleno según tu preferencia */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer;
+    position: relative; /* Necesario para el resplandor */
+    border-radius: 20px; /* Esquinas redondeadas */
+    transition: background-color 0.3s ease-in-out; /* Transición suave para el color de fondo */
+  }
+  
+  /* Estilo para el enlace dentro del botón */
+  .button button a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto del botón */
+  }
+  
+  /* Efecto de resplandor al pasar el cursor sobre el botón */
+  .button button:hover {
+    background-color: rgb(0, 34, 255); /* Cambia el color de fondo al pasar el mouse a naranja */
+    box-shadow: 0 0 10px rgb(4, 0, 255), 0 0 20px rgb(34, 0, 255), 0 0 30px rgb(81, 0, 255); /* Efecto de resplandor amarillo */
+  }
+  </style>
+
+</head>
+
+<body>
+  <main class="flower-content">
+  <section class="flower">
+    <div class="PetaloG PetaloG1"></div>
+    <div class="PetaloG PetaloG2"></div>
+    <div class="PetaloG PetaloG3"></div>
+    <div class="PetaloG PetaloG4"></div>
+    <div class="PetaloC PetaloC1"></div>
+    <div class="PetaloC PetaloC2"></div>
+    <div class="PetaloC PetaloC3"></div>
+    <div class="PetaloC PetaloC4"></div>
+    <div class="PetaloC PetaloC5"></div>
+    <div class="PetaloC PetaloC6"></div>
+    <div class="PetaloC PetaloC7"></div>
+    <div class="PetaloC PetaloC8"></div>
+    <span class="txt">Reyna Esther</span>
+  </section>
+  <div class="button">
+    <button>
+        <a href="index03.html">has click aqui amor😁</a>
+    </button>
+  </div>
+ </main>
+ 
+</div>
+
+
+</body>
+
+</html>
